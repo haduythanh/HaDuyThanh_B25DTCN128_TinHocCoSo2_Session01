@@ -1,15 +1,26 @@
 #include <stdio.h>
 
-int main (){
+int main() {
+    int n = 0, sum = 0, count = 0;
+    float average;
 
-    int n, i, sum = 0;
-
-    while (n !=0){
+    do {
         printf("Nhap so (0 de dung): ");
         scanf("%d", &n);
 
-        sum += n;
-    }
-    printf("Tong %d", sum);
+        if (n != 0) { 
+            sum += n;
+            count++;
+        }
+    } while (n != 0);
+
+    if (count > 0) {
+        average = (float)sum / count;
+        printf("Tong = %d\n", sum);
+        printf("Trung binh = %.2f\n", average);
+    } else {
+        printf("Khong co so nao duoc nhap\n");
+    } 
+
     return 0;
-}
+} 
